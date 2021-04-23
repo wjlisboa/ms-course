@@ -8,12 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "tb_worker")
 public class Worker implements Serializable {
-	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -21,9 +18,15 @@ public class Worker implements Serializable {
 	private Long id;
 	private String name;
 	private Double dailyIncome;
-
+	
 	public Worker() {
+	}
 
+	public Worker(Long id, String name, Double dailyIncome) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dailyIncome = dailyIncome;
 	}
 
 	public Long getId() {
@@ -74,5 +77,4 @@ public class Worker implements Serializable {
 			return false;
 		return true;
 	}
-
 }
